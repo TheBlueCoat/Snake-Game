@@ -5,6 +5,11 @@ This is a learning experience for me.
 
 RULES:
 -Use arrow keys to move.
+
 -The snake gets one block bigger once it eats its food.
+
 -If you get long enough and run into yourself, it's game over.
+
 -If you go out of bounds, it's game over.
+
+-Have Fun!

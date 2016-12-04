@@ -27,6 +27,7 @@ var LEFT=0, UP=1, RIGHT=2, DOWN=3;
 //KeyCodes
 var KEY_LEFT=37, KEY_UP=38, KEY_RIGHT=39, KEY_DOWN=40;
 
+//creates grid
 var grid = {
 	
 	width: null,
@@ -120,7 +121,7 @@ function main(){
 	init();
 	loop();
 }
-
+//Initiates score to 0.
 function init(){
 	score = 0;
 	
@@ -139,10 +140,10 @@ function loop(){
 	
 	window.requestAnimationFrame(loop, canvas);
 }
-
+//Updates the game logic
 function update(){
 	frames++;
-	
+	//Changes the direction of the snake when an arrow key is pressed.
 	if (keystate[KEY_LEFT] && snake.direction !== RIGHT)
 		snake.direction = LEFT;
 	if (keystate[KEY_UP] && snake.direction !== DOWN)
@@ -151,11 +152,11 @@ function update(){
 		snake.direction = RIGHT;
 	if (keystate[KEY_DOWN] && snake.direction !== UP)
 		snake.direction = DOWN;
-	
+	//Each five frames update the game state.
 	if (frames%5 === 0) {
 		var nx = snake.last.x;
 		var ny = snake.last.y;
-		
+		//Updates the posistion depending on snake direction.
 		switch (snake.direction){
 			case LEFT:
 			nx--;
@@ -192,7 +193,8 @@ function update(){
 		snake.insert(tail.x, tail.y);
 	}
 }
-
+//Sets the colors of the objects in the game
+//and calculates the title width and height.
 function draw(){
 	var tw = canvas.width/grid.width;
 	var th = canvas.height/grid.height;
@@ -213,12 +215,13 @@ function draw(){
 			ctx.fillRect(x*tw, y*th, tw, th);
 		}
 	}
+	//Draws the score at the bottom left and the title at the top of the canvas.
 	ctx.fillStyle = "#000";
 	ctx.fillText("SCORE: " + score, 10, canvas.height-10);
 	ctx.font = "15px Times New Roman";
 	ctx.fillText("SNAKE GAME", 227, canvas.height-500);
 }
-
+//Runs the game.
 main();
 </script>
 </body>

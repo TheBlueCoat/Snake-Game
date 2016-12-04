@@ -3,6 +3,8 @@ A snake game that I made. I used a tutorial to make the snake and some rules for
 Then I added my own things. Feel free to give suggestions, I am open to constructive criticism! 
 This is a learning experience for me.
 
+Play the game here: http://thebluecoat.weebly.com/my-games.html
+
 RULES:
 
 -Use arrow keys to move.
